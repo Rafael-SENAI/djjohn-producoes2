@@ -1,0 +1,9 @@
+LINHA 138 LOGIN.PHP
+
+<p style="color: #808080; font-size: 13px;">
+    <i class="fas fa-info-circle"></i> Usuário padrão:
+</p>
+<p style="color: #B0B0B0; font-size: 13px; margin-top: 8px;">
+    <strong>Email:</strong> admin@djjohn.com<br>
+    <strong>Senha:</strong> admin123
+</p>

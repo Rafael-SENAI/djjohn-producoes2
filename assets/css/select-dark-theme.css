@@ -1,0 +1,78 @@
+/* 
+ * SELECT DARK THEME FIX
+ * DJ JOHN PRODUCOES
+ * Arquivo limpo sem simbolos UTF-8 problematicos
+ */
+
+/* Remover estilos padrão do navegador */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Estilo base do select */
+select.form-control {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Select em foco */
+select.form-control:focus {
+    outline: none;
+    border-color: #FF0040;
+    background-color: rgba(255,255,255,0.08);
+    box-shadow: 0 0 0 3px rgba(255,0,64,0.1);
+}
+
+/* Opcoes do dropdown - tema escuro */
+select.form-control option {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* Primeira opcao (placeholder) em cinza */
+select.form-control option:first-child {
+    color: #808080;
+}
+
+/* Opcao em hover (nem todos navegadores suportam) */
+select.form-control option:hover {
+    background-color: rgba(255,0,64,0.2);
+    color: white;
+}
+
+/* Opcao selecionada */
+select.form-control option:checked {
+    background-color: #FF0040;
+    color: white;
+    font-weight: 600;
+}
+
+/* Select desabilitado */
+select.form-control:disabled {
+    background-color: rgba(255,255,255,0.02);
+    color: #606060;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Garantir que nao ha conflitos */
+select.form-control,
+select.form-control * {
+    box-sizing: border-box;
+}

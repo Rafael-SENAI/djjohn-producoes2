@@ -1,0 +1,97 @@
+/* ========================================
+   CORREÇÃO DEFINITIVA SELECTS - SEM SÍMBOLOS ESTRANHOS
+   ======================================== */
+
+/* Remover TODOS os estilos padrão */
+select.form-control,
+select {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+}
+
+/* Remover seta padrão do IE */
+select::-ms-expand {
+    display: none !important;
+}
+
+/* Estilo do select */
+select.form-control {
+    width: 100%;
+    padding: 16px 40px 16px 20px;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Adicionar seta customizada */
+select.form-control {
+    background-image: none;
+}
+
+/* Container do select com seta */
+.form-group {
+    position: relative;
+}
+
+.form-group select.form-control {
+    padding-right: 40px;
+}
+
+/* Seta do select usando pseudo-elemento no container */
+.form-group:has(select.form-control)::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #808080;
+    pointer-events: none;
+}
+
+/* Seta vermelha quando focado */
+.form-group:has(select.form-control:focus)::after {
+    border-top-color: #FF0040;
+}
+
+/* Select em foco */
+select.form-control:focus {
+    outline: none;
+    border-color: #FF0040;
+    background-color: rgba(255,255,255,0.08);
+    box-shadow: 0 0 0 3px rgba(255,0,64,0.1);
+}
+
+/* Opções do dropdown */
+select.form-control option {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 12px 20px;
+    font-size: 15px;
+}
+
+/* Primeira opção (placeholder) */
+select.form-control option:first-child {
+    color: #808080;
+}
+
+/* Opção em hover */
+select.form-control option:hover {
+    background-color: rgba(255,0,64,0.2);
+}
+
+/* Opção selecionada */
+select.form-control option:checked {
+    background-color: #FF0040;
+    color: white;
+    font-weight: 600;
+}
